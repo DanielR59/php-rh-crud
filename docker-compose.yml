@@ -1,0 +1,14 @@
+version: '3'
+services:
+    xampp:
+        container_name: myXampp
+        ports:
+            - 41061:22
+            - 41062:80
+            - 3306:3306
+        volumes:
+            - ./my_web_pages:/www
+            - mysql-data:/opt/lampp/var/mysql
+        image: tomsik68/xampp
+volumes:
+  mysql-data:
