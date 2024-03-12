@@ -17,7 +17,7 @@ elseif ($_SESSION['message_type']=="error") { ?>
 
 <?php session_unset();} }  ?>
 
-<form action="insert_user.php" method="POST">
+<form action='insert_user.php' method="POST">
 
     <div class="row">
         <div class="col-sm-12 col-lg-6">

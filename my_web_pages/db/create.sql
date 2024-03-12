@@ -22,5 +22,12 @@ CREATE TABLE attendance(
 );
 
 ALTER TABLE attendance
-    ADD FOREIGN KEY(email) REFERENCES users(email),
     ADD FOREIGN KEY(session_id) REFERENCES sessions(session_id);
+
+CREATE PROCEDURE sp_get_report(IN email_var VARCHAR(60))
+BEGIN
+    SELECT s.session_date, a.status 
+    FROM users AS u
+    INNER JOIN attendance AS a ON (u.email = a.email AND u.email = email_var AND a.email = email_var)
+    INNER JOIN sessions AS s ON (a.session_id = s.session_id)
+END;

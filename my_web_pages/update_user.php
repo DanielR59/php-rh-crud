@@ -2,7 +2,7 @@
 include('db.php');
 $name =  $_POST["name"];
 $email =  $_POST["email-user"];
-$puesto = $_POST["position"];
+$position = $_POST["position"];
 
 $query = "UPDATE users SET name='$name', position='$position' WHERE email = '$email'";
 try {

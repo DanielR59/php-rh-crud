@@ -29,7 +29,7 @@
                 </ul>
             </li>
             <a class="navbar-brand" href="asistencia.php">Asistencia ElDatio</a>
-            <a class="navbar-brand" href="index.php">PHP MySQL CRUD</a>
+            <a class="navbar-brand" href="reporte.php">Reporte asistencia</a>
             <a class="navbar-brand" href="index.php">PHP MySQL CRUD</a>
             <a class="navbar-brand" href="index.php">PHP MySQL CRUD</a>
         </div>

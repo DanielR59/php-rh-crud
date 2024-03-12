@@ -35,7 +35,7 @@ elseif ($_SESSION['message_type']=="error") { ?>
                 <td><?php echo $row['email']?></td>
                 <td><?php echo $row['position']?></td>
                 <td>
-                    <a href="edit_user.php?id=<?php echo $row["email"]?>" class="btn btn-secondary btn-warning">
+                    <a href="edit_user.php?id=<?php echo $row['email']?>" class="btn btn-secondary btn-warning">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-pencil" viewBox="0 0 16 16">
                             <path
