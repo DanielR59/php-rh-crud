@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS crud;
+USE crud;
+
+
 CREATE TABLE users (
     email VARCHAR(60),
     name VARCHAR(60),
@@ -24,10 +28,14 @@ CREATE TABLE attendance(
 ALTER TABLE attendance
     ADD FOREIGN KEY(session_id) REFERENCES sessions(session_id);
 
-CREATE PROCEDURE sp_get_report(IN email_var VARCHAR(60))
+DELIMITER $$
+
+CREATE PROCEDURE sp_get_report(IN email_parameter VARCHAR(60))
 BEGIN
-    SELECT s.session_date, a.status 
+    SELECT s.session_date AS session_date, a.status AS status 
     FROM users AS u
-    INNER JOIN attendance AS a ON (u.email = a.email AND u.email = email_var AND a.email = email_var)
-    INNER JOIN sessions AS s ON (a.session_id = s.session_id)
-END;
+    INNER JOIN attendance AS a ON (u.email = a.email AND u.email = email_parameter AND a.email = email_parameter)
+    INNER JOIN sessions AS s ON (a.session_id = s.session_id);
+END $$
+
+DELIMITER ;
