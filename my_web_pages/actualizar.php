@@ -26,7 +26,7 @@ elseif ($_SESSION['message_type']=="error") { ?>
         <tbody>
             <?php
 
-            $query = "SELECT name, email, position FROM users";
+            $query = "SELECT name, email, position FROM users ORDER BY name ASC";
 
             $result = $mysqli ->query($query) ;
             while ($row = mysqli_fetch_array($result)) { ?>

@@ -2,7 +2,7 @@
 <?php include("includes/header.php") ?>
 
 <?php 
-$query = "SELECT name,email FROM users;";
+$query = "SELECT name,email FROM users ORDER BY name ASC;";
 $result = $mysqli ->query($query) ;
 ?>
 
