@@ -1,19 +1,18 @@
 CREATE DATABASE IF NOT EXISTS crud;
 USE crud;
 
-
 CREATE TABLE users (
     email VARCHAR(60),
     name VARCHAR(60),
     position VARCHAR(20),
-    load_date DATE DEFAULT CURRENT_DATE,
-    modification_time TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NULL,
+    load_date DATE NOT NULL DEFAULT (CURRENT_DATE),
+    modification_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY(email)
 );
 
 CREATE TABLE sessions(
     session_id INT NOT NULL AUTO_INCREMENT,
-    session_date DATE DEFAULT CURRENT_DATE,
+    session_date DATE NOT NULL DEFAULT (CURRENT_DATE),
     notes TEXT,
     PRIMARY KEY(session_id)
 );
@@ -38,4 +37,6 @@ BEGIN
     INNER JOIN sessions AS s ON (a.session_id = s.session_id);
 END $$
 
-DELIMITER ;
+CREATE USER daniel IDENTIFIED BY 'daniel';
+GRANT ALL PRIVILEGES ON *.* TO 'daniel'@'%' WITH GRANT OPTION;
+

@@ -1,3 +1,4 @@
+USE crud;
 INSERT INTO users(name,email,position)
 VALUES
 ('Luis Fernando Madrigal Tolentino','fernando.madrigal','Pendiente'),
