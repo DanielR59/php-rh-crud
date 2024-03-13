@@ -11,7 +11,7 @@ $result = $mysqli ->query($query) ;
     <div class="row">
         <div class="col-md-4">
             <form action="generate_report.php" method="POST">
-                <select name="user">
+                <select name="user" class="form-select">
                     <?php while ($row = mysqli_fetch_array($result)) { ?>
                     <option value="<?php echo $row['email'];?>"><?php echo $row['name'];?></option>
                     <?php } ?>
